@@ -147,10 +147,13 @@
     }
 }
 .outer-wrap{
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .section-wrap{
-    padding: 20px 0;
+    padding: 5% 0;
+    @media(max-width: $screen-phone){
+        padding: 20px 0;
+    }
 }
 .work-card{
     background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
@@ -160,6 +163,10 @@
             width: 100%;
             height: 200px;
             background-size: cover;
+            @media (max-width: $screen-tablet){
+                width: 150px;
+                height: 150px;
+            }
         }
     }
 }
