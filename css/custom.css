@@ -1,0 +1,241 @@
+/* line 13, ../sass/custom.scss */
+.navbar {
+  background-color: #fff;
+}
+
+/* line 16, ../sass/custom.scss */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 22px;
+  padding: 24px;
+}
+
+/* line 21, ../sass/custom.scss */
+.fixed-menu {
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 22px;
+  top: 22px;
+  z-index: 100;
+}
+/* line 29, ../sass/custom.scss */
+.fixed-menu > span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+/* line 38, ../sass/custom.scss */
+.fixed-menu > span:nth-child(2) {
+  top: 10px;
+}
+/* line 41, ../sass/custom.scss */
+.fixed-menu > span:nth-child(3) {
+  top: 20px;
+}
+/* line 47, ../sass/custom.scss */
+.fixed-menu:hover > span:nth-child(1) {
+  -moz-transform: translate3d(0, -2px, 0);
+  -ms-transform: translate3d(0, -2px, 0);
+  -webkit-transform: translate3d(0, -2px, 0);
+  transform: translate3d(0, -2px, 0);
+}
+/* line 50, ../sass/custom.scss */
+.fixed-menu:hover > span:nth-child(3) {
+  -moz-transform: translate3d(0, 2px, 0);
+  -ms-transform: translate3d(0, 2px, 0);
+  -webkit-transform: translate3d(0, 2px, 0);
+  transform: translate3d(0, 2px, 0);
+}
+/* line 56, ../sass/custom.scss */
+.fixed-menu.is-active > span {
+  background-color: #fff;
+}
+/* line 58, ../sass/custom.scss */
+.fixed-menu.is-active > span:nth-child(1) {
+  -moz-transform: rotate(-45deg) translate3d(-9px, 9px, 0);
+  -ms-transform: rotate(-45deg) translate3d(-9px, 9px, 0);
+  -webkit-transform: rotate(-45deg) translate3d(-9px, 9px, 0);
+  transform: rotate(-45deg) translate3d(-9px, 9px, 0);
+}
+/* line 61, ../sass/custom.scss */
+.fixed-menu.is-active > span:nth-child(2) {
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+}
+/* line 64, ../sass/custom.scss */
+.fixed-menu.is-active > span:nth-child(3) {
+  -moz-transform: rotate(45deg) translate3d(-5px, -5px, 0);
+  -ms-transform: rotate(45deg) translate3d(-5px, -5px, 0);
+  -webkit-transform: rotate(45deg) translate3d(-5px, -5px, 0);
+  transform: rotate(45deg) translate3d(-5px, -5px, 0);
+}
+
+/* line 70, ../sass/custom.scss */
+.fixed-menu-content {
+  display: none;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VmNTNjZSIgc3RvcC1vcGFjaXR5PSIwLjkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMTE1ZTAiIHN0b3Atb3BhY2l0eT0iMC45Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background: -moz-linear-gradient(90deg, rgba(239, 83, 206, 0.9) 0%, rgba(49, 21, 224, 0.9) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(239, 83, 206, 0.9) 0%, rgba(49, 21, 224, 0.9) 100%);
+  background: linear-gradient(0deg, rgba(239, 83, 206, 0.9) 0%, rgba(49, 21, 224, 0.9) 100%);
+  height: 100%;
+  top: 0;
+  z-index: 99;
+}
+/* line 79, ../sass/custom.scss */
+.fixed-menu-content:after {
+  content: '';
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 86, ../sass/custom.scss */
+.fixed-menu-content a {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 90, ../sass/custom.scss */
+.fixed-menu-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 96, ../sass/custom.scss */
+.fixed-menu-content ul li {
+  -moz-transform: translate3d(0, 10%, 0);
+  -ms-transform: translate3d(0, 10%, 0);
+  -webkit-transform: translate3d(0, 10%, 0);
+  transform: translate3d(0, 10%, 0);
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  padding-bottom: 20px;
+}
+/* line 101, ../sass/custom.scss */
+.fixed-menu-content ul li:nth-child(1) {
+  -moz-transition-delay: 0.1s;
+  -o-transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+}
+/* line 104, ../sass/custom.scss */
+.fixed-menu-content ul li:nth-child(2) {
+  -moz-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+/* line 107, ../sass/custom.scss */
+.fixed-menu-content ul li:nth-child(3) {
+  -moz-transition-delay: 0.3s;
+  -o-transition-delay: 0.3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+/* line 111, ../sass/custom.scss */
+.fixed-menu-content ul li a h4 {
+  font-size: 40px;
+  font-weight: bold;
+}
+@media (max-width: 480px) {
+  /* line 111, ../sass/custom.scss */
+  .fixed-menu-content ul li a h4 {
+    font-size: 24px;
+  }
+}
+/* line 118, ../sass/custom.scss */
+.fixed-menu-content ul li a span {
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 18px;
+}
+@media (max-width: 480px) {
+  /* line 118, ../sass/custom.scss */
+  .fixed-menu-content ul li a span {
+    font-size: 16px;
+  }
+}
+/* line 131, ../sass/custom.scss */
+.fixed-menu-content.is-active ul li {
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* line 139, ../sass/custom.scss */
+.work-experience .wrap {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* line 145, ../sass/custom.scss */
+.cbp_tmtimeline li {
+  position: relative;
+}
+
+/* line 149, ../sass/custom.scss */
+.outer-wrap {
+  margin-top: 50px;
+}
+
+/* line 152, ../sass/custom.scss */
+.section-wrap {
+  padding: 20px 0;
+}
+
+/* line 155, ../sass/custom.scss */
+.work-card {
+  background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
+  height: 600px;
+}
+/* line 159, ../sass/custom.scss */
+.work-card .item .image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+}
+
+/* line 166, ../sass/custom.scss */
+.my-skills {
+  background-color: #000;
+  color: #fff;
+}
+/* line 171, ../sass/custom.scss */
+.my-skills .col-md-12 ul {
+  list-style: none;
+  padding: 0;
+}
+/* line 174, ../sass/custom.scss */
+.my-skills .col-md-12 ul li {
+  padding: 10px 0;
+  width: 30%;
+  font-size: 18px;
+  display: inline-block;
+}
+@media (max-width: 480px) {
+  /* line 174, ../sass/custom.scss */
+  .my-skills .col-md-12 ul li {
+    width: 100%;
+  }
+}

@@ -1,0 +1,185 @@
+@import "compass/css3";
+@import "bootstrap/variables";
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+.navbar{
+    background-color: #fff;
+}
+.navbar-brand{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 24px;
+}
+.fixed-menu{
+    display: block;
+    width: 35px;
+    height: 35px;
+    position: fixed;
+    right: 22px;
+    top: 22px;
+    z-index: 100;
+    >span{
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #000;
+        @include transition(all .25s ease-out);
+        &:nth-child(2){
+            top: 10px;
+        }
+        &:nth-child(3){
+            top: 20px;
+        }
+    }
+    &:hover{
+        >span{
+            &:nth-child(1){
+                @include transform(translate3d(0, -2px, 0));
+            }
+            &:nth-child(3){
+                @include transform(translate3d(0, 2px, 0));
+            }
+        }
+    }
+    &.is-active{
+        >span{
+            background-color: #fff;
+            &:nth-child(1){
+                @include transform(rotate(-45deg) translate3d(-9px, 9px, 0));
+            }
+            &:nth-child(2){
+                @include transform(scaleX(0));
+            }
+            &:nth-child(3){
+                @include transform(rotate(45deg) translate3d(-5px, -5px, 0));
+            }
+        }
+    }
+}
+.fixed-menu-content{
+    display: none;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    @include background(linear-gradient(0deg, rgba(239, 83, 206, 0.9) 0%, rgba(49, 21, 224, 0.9) 100%));
+    height: 100%;
+    top: 0;
+    z-index: 99;
+    &:after{
+        content: '';
+        width: 0;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+        vertical-align: middle;
+        li{
+            @include transform(translate3d(0, 10%, 0));
+            @include transition(all .5s ease-out);
+            opacity: 0;
+            padding-bottom: 20px;
+            &:nth-child(1){
+                @include transition-delay(.1s);
+            }
+            &:nth-child(2){
+                @include transition-delay(.2s);
+            }
+            &:nth-child(3){
+                @include transition-delay(.3s);
+            }
+            a{
+                h4{
+                    font-size: 40px;
+                    font-weight: bold;
+                    @media(max-width: $screen-phone){
+                        font-size: 24px;
+                    }
+                }
+                span{
+                    letter-spacing: 2px;
+                    font-weight: bold;
+                    font-size: 18px;
+                    @media(max-width: $screen-phone){
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    &.is-active{
+        ul{
+            li{
+                @include transform(translate3d(0, 0, 0));
+                opacity: 1;
+            }
+        } 
+    }
+}
+.work-experience{
+    .wrap{
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+}
+.cbp_tmtimeline{
+    li{
+        position: relative;
+    }
+}
+.outer-wrap{
+    margin-top: 50px;
+}
+.section-wrap{
+    padding: 20px 0;
+}
+.work-card{
+    background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
+    height: 600px;
+    .item{
+        .image{
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+        }
+    }
+}
+.my-skills{
+    background-color: #000;
+    color: #fff;
+    .col-md-12{
+        .tt{}
+        ul{
+            list-style: none;
+            padding: 0;
+            li{
+                padding: 10px 0;
+                width: 30%;
+                font-size: 18px;
+                display: inline-block;
+                @media (max-width: $screen-phone){
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
