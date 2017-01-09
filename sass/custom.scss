@@ -107,6 +107,9 @@
             &:nth-child(3){
                 @include transition-delay(.3s);
             }
+            &:nth-child(4){
+                @include transition-delay(.4s);
+            }
             a{
                 h4{
                     font-size: 40px;
@@ -156,18 +159,81 @@
     }
 }
 .work-card{
-    background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
+    // background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
     height: 600px;
+    .row{
+        margin: 0;
+    }
     .item{
-        .image{
-            width: 100%;
-            height: 200px;
-            background-size: cover;
-            @media (max-width: $screen-tablet){
-                width: 150px;
-                height: 150px;
+        display: block;
+        position: relative;
+        &:hover,
+        &:focus{
+            text-decoration: none;
+        }
+        &:hover{
+            .item-top{
+                img{
+                    @include filter(grayscale(0));
+                }
+                .color{
+                    background-color: #777!important;
+                }
             }
         }
+        .item-top{
+            padding: 10px 0;
+            position: relative;
+            img{
+                width: 100%;
+                @include filter(grayscale(100%));
+            }
+            .color{
+                position: absolute;
+                color: #fff;
+                right: -13px;
+                bottom: 0;
+                line-height: 50px;
+                padding: 0 10px;
+                &.is-FFCC33{
+                    background-color: #ffcc33;
+                }
+                &.is-CC0000{
+                    background-color: #cc0000;
+                }
+                &.is-699E2C{
+                    background-color: #699E2C;
+                }
+                &.is-00A0E0{
+                    background-color: #00A0E0;
+                }
+                &.is-D72825{
+                    background-color: #D72825;
+                }
+                &.is-FF6694{
+                    background-color: #FF6694;
+                }
+            }
+        }
+        .item-bottom{
+            padding: 10px;
+            background-color: #fff;
+            ul{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        }
+        .number{
+            font-family: "Montserrat",Arial,メイリオ,Meiryo,sans-serif;
+            font-size: 54px;
+            font-weight: 700;
+            position: absolute;
+            left: -23px;
+            top: -33px;
+            text-shadow: 1px 1px #fff;
+        }
+        
     }
 }
 .my-skills{

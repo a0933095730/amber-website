@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* line 13, ../sass/custom.scss */
 .navbar {
   background-color: #fff;
@@ -151,30 +152,37 @@
   -webkit-transition-delay: 0.3s;
   transition-delay: 0.3s;
 }
-/* line 111, ../sass/custom.scss */
+/* line 110, ../sass/custom.scss */
+.fixed-menu-content ul li:nth-child(4) {
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+/* line 114, ../sass/custom.scss */
 .fixed-menu-content ul li a h4 {
   font-size: 40px;
   font-weight: bold;
 }
 @media (max-width: 480px) {
-  /* line 111, ../sass/custom.scss */
+  /* line 114, ../sass/custom.scss */
   .fixed-menu-content ul li a h4 {
     font-size: 24px;
   }
 }
-/* line 118, ../sass/custom.scss */
+/* line 121, ../sass/custom.scss */
 .fixed-menu-content ul li a span {
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 18px;
 }
 @media (max-width: 480px) {
-  /* line 118, ../sass/custom.scss */
+  /* line 121, ../sass/custom.scss */
   .fixed-menu-content ul li a span {
     font-size: 16px;
   }
 }
-/* line 131, ../sass/custom.scss */
+/* line 134, ../sass/custom.scss */
 .fixed-menu-content.is-active ul li {
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -183,63 +191,136 @@
   opacity: 1;
 }
 
-/* line 139, ../sass/custom.scss */
+/* line 142, ../sass/custom.scss */
 .work-experience .wrap {
   text-align: center;
   border: 1px solid #ccc;
 }
 
-/* line 145, ../sass/custom.scss */
+/* line 148, ../sass/custom.scss */
 .cbp_tmtimeline li {
   position: relative;
 }
 
-/* line 149, ../sass/custom.scss */
+/* line 152, ../sass/custom.scss */
 .outer-wrap {
   margin-top: 80px;
 }
 
-/* line 152, ../sass/custom.scss */
+/* line 155, ../sass/custom.scss */
 .section-wrap {
   padding: 5% 0;
 }
 @media (max-width: 480px) {
-  /* line 152, ../sass/custom.scss */
+  /* line 155, ../sass/custom.scss */
   .section-wrap {
     padding: 20px 0;
   }
 }
 
-/* line 158, ../sass/custom.scss */
+/* line 161, ../sass/custom.scss */
 .work-card {
-  background-image: url(http://toshin-sekai.com/wp-content/themes/kayacmedia/images/stripe-a.png);
   height: 600px;
 }
-/* line 162, ../sass/custom.scss */
-.work-card .item .image {
-  width: 100%;
-  height: 200px;
-  background-size: cover;
+/* line 164, ../sass/custom.scss */
+.work-card .row {
+  margin: 0;
 }
-@media (max-width: 768px) {
-  /* line 162, ../sass/custom.scss */
-  .work-card .item .image {
-    width: 150px;
-    height: 150px;
-  }
+/* line 167, ../sass/custom.scss */
+.work-card .item {
+  display: block;
+  position: relative;
+}
+/* line 170, ../sass/custom.scss */
+.work-card .item:hover, .work-card .item:focus {
+  text-decoration: none;
+}
+/* line 176, ../sass/custom.scss */
+.work-card .item:hover .item-top img {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+/* line 179, ../sass/custom.scss */
+.work-card .item:hover .item-top .color {
+  background-color: #777 !important;
+}
+/* line 184, ../sass/custom.scss */
+.work-card .item .item-top {
+  padding: 10px 0;
+  position: relative;
+}
+/* line 187, ../sass/custom.scss */
+.work-card .item .item-top img {
+  width: 100%;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+/* line 191, ../sass/custom.scss */
+.work-card .item .item-top .color {
+  position: absolute;
+  color: #fff;
+  right: -13px;
+  bottom: 0;
+  line-height: 50px;
+  padding: 0 10px;
+}
+/* line 198, ../sass/custom.scss */
+.work-card .item .item-top .color.is-FFCC33 {
+  background-color: #ffcc33;
+}
+/* line 201, ../sass/custom.scss */
+.work-card .item .item-top .color.is-CC0000 {
+  background-color: #cc0000;
+}
+/* line 204, ../sass/custom.scss */
+.work-card .item .item-top .color.is-699E2C {
+  background-color: #699E2C;
+}
+/* line 207, ../sass/custom.scss */
+.work-card .item .item-top .color.is-00A0E0 {
+  background-color: #00A0E0;
+}
+/* line 210, ../sass/custom.scss */
+.work-card .item .item-top .color.is-D72825 {
+  background-color: #D72825;
+}
+/* line 213, ../sass/custom.scss */
+.work-card .item .item-top .color.is-FF6694 {
+  background-color: #FF6694;
+}
+/* line 218, ../sass/custom.scss */
+.work-card .item .item-bottom {
+  padding: 10px;
+  background-color: #fff;
+}
+/* line 221, ../sass/custom.scss */
+.work-card .item .item-bottom ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* line 227, ../sass/custom.scss */
+.work-card .item .number {
+  font-family: "Montserrat",Arial,メイリオ,Meiryo,sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  position: absolute;
+  left: -23px;
+  top: -33px;
+  text-shadow: 1px 1px #fff;
 }
 
-/* line 173, ../sass/custom.scss */
+/* line 239, ../sass/custom.scss */
 .my-skills {
   background-color: #000;
   color: #fff;
 }
-/* line 178, ../sass/custom.scss */
+/* line 244, ../sass/custom.scss */
 .my-skills .col-md-12 ul {
   list-style: none;
   padding: 0;
 }
-/* line 181, ../sass/custom.scss */
+/* line 247, ../sass/custom.scss */
 .my-skills .col-md-12 ul li {
   padding: 10px 0;
   width: 30%;
@@ -247,7 +328,7 @@
   display: inline-block;
 }
 @media (max-width: 480px) {
-  /* line 181, ../sass/custom.scss */
+  /* line 247, ../sass/custom.scss */
   .my-skills .col-md-12 ul li {
     width: 100%;
   }
