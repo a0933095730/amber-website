@@ -283,7 +283,7 @@ html {
 
 /* line 27, ../sass/bootstrap/_scaffolding.scss */
 body {
-  font-family: Verdana, 微軟正黑體, Verdana, serif;
+  font-family: sans-serif, Verdana, 微軟正黑體, Verdana, serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -308,7 +308,7 @@ a {
 /* line 52, ../sass/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
 }
 /* line 58, ../sass/bootstrap/_scaffolding.scss */
 a:focus {

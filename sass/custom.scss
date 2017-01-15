@@ -10,13 +10,15 @@
     clear: both;
   }
 }
+
 .navbar{
-    background-color: #fff;
+    // background-color: #fff;
 }
 .navbar-brand{
-    font-weight: bold;
-    font-size: 22px;
+    font-size: 40px;
+    letter-spacing: 2px;
     padding: 24px;
+    font-family: 'Pacifico', cursive;
 }
 .fixed-menu{
     display: block;
@@ -167,6 +169,7 @@
     .item{
         display: block;
         position: relative;
+        margin-bottom: 15px;
         &:hover,
         &:focus{
             text-decoration: none;
@@ -187,6 +190,7 @@
             img{
                 width: 100%;
                 @include filter(grayscale(100%));
+                @include transition(filter .5s ease);
             }
             .color{
                 position: absolute;
@@ -214,6 +218,18 @@
                     background-color: #FF6694;
                 }
             }
+            .color-ball{
+                position: absolute;
+                top: -10px;
+                right: 0;
+                i{
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background-color: #f60;
+                }
+            }
         }
         .item-bottom{
             padding: 10px;
@@ -233,7 +249,19 @@
             top: -33px;
             text-shadow: 1px 1px #fff;
         }
-        
+    }
+    @media (max-width: $screen-tablet){
+            .item{
+            display: flex;
+            .item-top{
+                width: 200px;
+                height: 200px;
+                flex: none;
+            }
+            .item-bottom{
+                flex: 1;
+            }
+        }
     }
 }
 .my-skills{
@@ -254,5 +282,342 @@
                 }
             }
         }
+    }
+}
+
+//index-v1
+//main
+.main{
+    .main-left{
+        width: 45%;
+        background-image: url(../images/main-image.jpeg);
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: fixed;
+        background-position: center center;
+        @include transition(all 0.4s ease);
+        @media(max-width: $screen-tablet){
+            width: 100%;
+            position: initial;
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: #000;
+            opacity: 0.3;
+        }
+        // &:hover{
+        //     background-size: 110% auto;
+        // }
+        .inner{
+            color: #fff;
+            font-size: 46px;
+            position: absolute;
+            z-index: 2;
+            bottom: 40%;
+            padding: 0 5%;
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 2px;
+        }
+    }
+    .main-right{
+        width: 55%;
+        margin-left: 45%;
+        height: 100vh;
+        // overflow-y: scroll;
+        @media(max-width: $screen-tablet){
+            width: 100%;
+            margin-left: 0;
+            height: initial;
+            // overflow-y: auto;
+        }
+        section{
+            .angle-wrap{
+                position: relative;
+                padding: 3% 10% 24% 10%;
+                @media(max-width: $screen-phone){
+                    padding: 4% 10% 40% 10%;
+                }
+                &:after{
+                    content: '';
+                    width: 100%;
+                    height: 100px;
+                    position: absolute;
+                    left: 0;
+                    bottom: -50px;
+                    -webkit-transform: skewY(5deg);
+                    transform: skewY(5deg);
+                    background-color: #eaeaea;
+                    z-index: 1;
+                }
+                >.tt{
+                    margin: 43px 0 30px 0;
+                    font-weight: bold;
+                    font-size: 40px;
+                }
+            }
+            .web-design{
+                background-color: #fff;
+                &:after{
+                    background-color: #eaeaea;
+                }
+            }
+            .graphic-design{
+                background-color: #eaeaea;
+                &:after{
+                    background-color: #f6e000;
+                }
+            }
+            .about-me{
+                background-color: #f6e000;
+                min-height: 300px;
+                overflow: hidden;
+                &:after{
+                    background-color: #5d5d5d;
+                }
+                .me{
+                    width: 50%;
+                    position: absolute;
+                    right: -26px;
+                    bottom: -28px;
+                    z-index: 1;
+                    @media(max-width: $screen-phone){
+                        display: none;
+                    }
+                }
+            }
+            .contact-me{
+                background-color: #5d5d5d;
+                padding: 4% 10% 20% 10%;
+                color: #fff;
+                &:after{
+                    display: none;
+                }
+                a{
+                    display: block;
+                    color: #fff;
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
+.item{
+    display: block;
+    margin-bottom: 10%;
+    &:hover{
+        text-decoration: none;
+        .item-image{
+            box-shadow: 0px 0px 7px 3px rgba(121, 121, 121, 0.7);
+            &:after{
+                opacity: 0;
+            }
+            img{
+                transform: scale(1.05);
+                
+            }
+        }
+    }
+    .item-image{
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+        box-shadow: none;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: #000;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+        }
+        img{
+            width: 100%;
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+    }
+    .item-content{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        padding: 10px 0;
+        li{
+            margin-bottom: 10px;
+            .category{
+                color: #000;
+                padding: 1px 3px;
+            }
+            &.tt{
+                font-size: 15px;
+                font-weight: 900;
+                background-image: url(http://www.smile-navi-web.com/top/img/exam/bg_h2.png);
+                background-repeat: repeat-x;
+                background-position: bottom;
+                display: inline-block;
+            }
+            &.skill{
+                height: 40px;
+                @media(max-width: $screen-phone){
+                    display: none;
+                }
+                span{
+                    display: inline-block;
+                    font-size: 12px;
+                    color: #999;
+                    &:after{
+                        content: '/';
+                        display: inline-block;
+                        padding: 0px 6px;
+                    }
+                    &:last-child:after{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.white-angle{
+    content: '';
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+    -webkit-transform: skewY(5deg);
+    transform: skewY(5deg);
+}
+//graphic design
+.bg-gray{
+    background-color: #eaeaea;
+}
+.card{
+    margin-bottom: 10%;
+    display: block;
+    &:hover{
+        .card-image{
+            img{
+                @include transform(scale(1.05));
+            }
+        }
+    }
+    .card-image{
+        width: 100%;
+        overflow: hidden;
+        img{
+            width: 100%;
+            @include transition(all .3s ease);
+        }
+    }
+    .card-content{
+        padding: 10px;
+        background-color: #fff;
+    }
+}
+
+//page
+.nav-page-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin: 50px 0 30px 0;
+    @media(max-width: $screen-phone){
+        margin: 50px 0 20px 0;
+    }
+    li{
+        display: inline-block;
+        a{
+            display: block;
+            font-size: 28px;
+            padding: 8px 10px;
+            font-weight: bold;
+            position: relative;
+            margin: 0 10px;
+            @media(max-width: $screen-phone){
+                font-size: 20px;
+            }
+            &:after{
+                width: 0;
+                content: '';
+                height: 3px;
+                background-color: #000;
+                position: absolute;
+                left: 0;
+                bottom: 50%;
+                transition: all 0.2s ease;
+                @media(max-width: $screen-phone){
+                    height: 2px;
+                }
+            }
+            &:hover:after,
+            &.active:after{
+                width: 100%;
+            }
+        }
+    }
+}
+.graphic-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 10px;
+    li{
+        display: inline-block;
+        border: 1px solid #000;
+        margin-right: 3px;
+        margin-bottom: 7px;
+        a{
+            display: block;
+            padding: 5px;
+            @include transition(all 0.3s ease);
+            &:hover,
+            &.active{
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
+.grid-item{
+    width: 25%;
+    padding: 5px;
+    @media(max-width: $screen-tablet){
+        width: 33.3%;
+    }
+    @media(max-width: $screen-phone){
+        width: 50%;
+    }
+    @media(max-width: 320px){
+        width: 100%;
+    }
+    .grid-item-image{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    &.double{
+        width: 50%;
+        @media(max-width: $screen-tablet){
+            width: 66.66%;
+        }
+        @media(max-width: $screen-phone){
+            width: 100%;
+        }
+    }
+    &.block{
+        width: 100%;
     }
 }
