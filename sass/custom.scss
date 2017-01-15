@@ -74,7 +74,7 @@
     width: 100%;
     position: fixed;
     text-align: center;
-    @include background(linear-gradient(0deg, rgba(239, 83, 206, 0.9) 0%, rgba(49, 21, 224, 0.9) 100%));
+    @include background(linear-gradient(0deg, #ffd400 0%, rgba(21, 178, 224, 0.9) 100%));
     height: 100%;
     top: 0;
     z-index: 99;
@@ -113,19 +113,40 @@
                 @include transition-delay(.4s);
             }
             a{
+                display: block;
                 h4{
                     font-size: 40px;
                     font-weight: bold;
+                    position: relative;
+                    display: inline-block;
+                    padding: 0 10px;
                     @media(max-width: $screen-phone){
                         font-size: 24px;
+                    }
+                    &:after{
+                        @include transition(all 0.3s ease);
+                        content: '';
+                        width: 0;
+                        height: 4px;
+                        position: absolute;
+                        background-color: #fff;
+                        left: 0;
+                        top: 50%;
+                        right: 0;
                     }
                 }
                 span{
                     letter-spacing: 2px;
                     font-weight: bold;
                     font-size: 18px;
+                    display: block;
                     @media(max-width: $screen-phone){
                         font-size: 16px;
+                    }
+                }
+                &:hover{
+                    h4:after{
+                        width: 100%;
                     }
                 }
             }
@@ -341,7 +362,7 @@
                 position: relative;
                 padding: 3% 10% 24% 10%;
                 @media(max-width: $screen-phone){
-                    padding: 4% 10% 40% 10%;
+                    padding: 4% 5% 40% 5%;
                 }
                 &:after{
                     content: '';
@@ -359,6 +380,53 @@
                     margin: 43px 0 30px 0;
                     font-weight: bold;
                     font-size: 40px;
+                    position: relative;
+                    @media (max-width: $screen-phone){
+                        font-size: 36px;
+                    }
+                    a{
+                        height: 30px;
+                        padding: 8px;
+                        border: 1px solid #333;
+                        box-sizing: border-box;
+                        text-decoration: none;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        letter-spacing: .03em;
+                        font-weight: 700;
+                        overflow: hidden;
+                        font-size: 1.1rem;
+                        margin-top: -15px;
+                        z-index: 2;
+                        @media(max-width: $screen-phone){
+                            bottom: initial;
+                            top: -20px;
+                        }
+                        span{
+                            position: relative;
+                            font-size: 16px;
+                            z-index: 3;
+                        }
+                        &:before{
+                           content: '';
+                            width: 107%;
+                            height: 100%;
+                            background-color: #000;
+                            position: absolute;
+                            top: 0;
+                            left: -110%;
+                            transform: translateX(0);
+                            transition: all 0.3s ease;
+                            z-index: 0;
+                        }
+                        &:hover{
+                            color: #fff;
+                            &:before{
+                                transform: translateX(100%);
+                            }
+                        }
+                    }
                 }
             }
             .web-design{
@@ -393,7 +461,7 @@
             }
             .contact-me{
                 background-color: #5d5d5d;
-                padding: 4% 10% 20% 10%;
+                padding: 4% 5% 20% 5%;
                 color: #fff;
                 &:after{
                     display: none;
@@ -608,13 +676,24 @@
             width: 100%;
         }
     }
-    &.double{
+    &.lg{
         width: 50%;
-        @media(max-width: $screen-tablet){
-            width: 66.66%;
-        }
+        padding: 15px;
         @media(max-width: $screen-phone){
             width: 100%;
+            padding: 5px;
+        }
+    }
+    &.md{
+        width: 33.3333%;
+        padding: 10px;
+        @media(max-width: $screen-phone){
+            width: 50%;
+            padding: 5px;
+        }
+        @media(max-width: 320px){
+            width: 100%;
+            padding: 5px;
         }
     }
     &.block{
